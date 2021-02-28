@@ -1,3 +1,4 @@
+
 import Foundation
 
 class Account
@@ -110,6 +111,10 @@ class SalaryAccount: Account
 
 
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+import Foundation
 
 class Customer
 {
@@ -190,12 +195,12 @@ class Customer
                         return false
                     }
                 default:
-                    print("*Please Enter Correct Account Type*")
+                    print("**Please Enter Correct Account Type**")
                     return false
             }
         }else{
-            print("*Entered Account Type already Exists for the user*")
-            print("*Please Select Other Account Type to Create*")
+            print("**Entered Account Type already Exists for the user**")
+            print("**Please Select Other Account Type to Create**")
             return false
         }
     }
@@ -238,7 +243,6 @@ class Customer
                 print("3.\(self.account3!.type)")
                 count += 1
             }
-            print("\nPlease Select Account type")
             return true
         }else {
             print("Customer have No accounts Created")
@@ -269,7 +273,7 @@ class Customer
                     return nil
                 }
             default:
-                print("*Please Enter Correct Account type to Proceed*")
+                print("**Please Enter Correct Account type to Proceed**")
                 return nil
         }
     }
@@ -280,7 +284,7 @@ class Customer
         if account != nil {
             print("Account Balance is: \(account!.currentBalance)")
         }else{
-            print("*Customer Doesn't have selected Account*")
+            print("**Customer Doesn't have selected Account**")
         }
     }
     
@@ -508,7 +512,7 @@ class Customer
                     let account = getAccount(type:from)
                     if account != nil {
                         if account!.withDraw(amount:250.0*num) {
-                            print("Booking Succesfull \n Theatre: Cineplex\t\t\tSeat No: H5")
+                            print("Booking Succesfull \n Booking ID: \(Int.random(in: 11111..<99999))")
                             return true
                         }else {
                             return false
@@ -609,17 +613,19 @@ class Customer
                 }
             
             default:
-                print("*Incorrect Selection*")
+                print("**Incorrect Selection**")
                 return false
         }
         
       }
     
     }
-    
-    
-    
-    //*****   main function***********//
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import Foundation
+
 var customers = [Customer]()
 var users = 1000
 var accountNos = 100000
@@ -762,7 +768,7 @@ func adddetails()
 
 func banking(cus:Customer){
     var more = 1
-    print("--------------------*****--------------------------")
+    print("--------------------***************--------------------------")
     print("\nPlease Select from below Transactions:\n 1:Check Balance\n 2.Deposit Money \n 3.Withdraw Money \n 4.Transfer Money\n 5.Pay Bills\n 6.Bookings\n 7.Exit\n")
     let transaction = Int(readLine()!) ?? 0
     switch transaction{
@@ -806,7 +812,7 @@ func banking(cus:Customer){
                         print("Money Transfer Unsuccessfull")
                     }
                 }else {
-                    print("*The Sender and Beneficiary Accounts are same*")
+                    print("**The Sender and Beneficiary Accounts are same**")
                 }
                 
             }
@@ -843,7 +849,7 @@ func banking(cus:Customer){
             break
         default:
             more = 2
-            print("*Please enter correct Choice*")
+            print("**Please enter correct Choice**")
             banking(cus:cus)
     }
     
@@ -933,7 +939,7 @@ func editdetails(cus:Customer){
             rep = Int(readLine()!) ?? 0
 
         default:
-            print("*Please enter correct Choice*")
+            print("**Please enter correct Choice**")
             rep = 1
         }
         
@@ -952,7 +958,7 @@ func editdetails(cus:Customer){
 var powerOff:Int
 repeat{
     powerOff = 1
-    print("*****--------   Helloo User Welcome to Indian Bank  ---------******")
+    print("***************--------   Helloo User Welcome to Indian Bank  ---------**************")
     print("\nChoose anyone from below\n 1:New Customer\n 2:Existing Customer\n 3:Exit Bank Application\nSelect 1 or 2 or 3 only")
     let choice = Int(readLine()!) ?? 0
     if choice == 1{
@@ -975,6 +981,9 @@ repeat{
         print("\nGetting Out of Application...\nHave a good day...\n")
         powerOff = 0
     }else {
-        print("\n*Please enter correct Choice*")
+        print("\n**Please enter correct Choice**")
     }
 }while powerOff == 1
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
